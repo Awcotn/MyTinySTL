@@ -1,0 +1,3 @@
+/home/awcotn/Dev/MyTinySTL/build/CMakeFiles/main.dir
+/home/awcotn/Dev/MyTinySTL/build/CMakeFiles/edit_cache.dir
+/home/awcotn/Dev/MyTinySTL/build/CMakeFiles/rebuild_cache.dir
