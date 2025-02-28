@@ -33,7 +33,7 @@ class MyVector {
   }
 
   //拷贝赋值操作符
-  MyVector &operator=(const MyVector& other){
+  MyVector& operator=(const MyVector& other){
     if (this == &other) {
       return *this;
     }
@@ -46,7 +46,7 @@ class MyVector {
   }
 
   //move赋值操作符
-  MyVector &operator=(MyVector&& other){
+  MyVector& operator=(MyVector&& other){
     if (this == &other) {
       return *this;
     }
