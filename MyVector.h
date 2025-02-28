@@ -25,8 +25,15 @@ class MyVector {
     std::copy(other.elements, other.elements + size, elements);
   }
 
+  //move构造函数
+  MyVector(MyVector&& other) : elements(other.elements), size(other.size), capacity(other.capacity) {
+    other.elements = nullptr;
+    other.size = 0;
+    other.capacity = 0;
+  }
+
   //拷贝赋值操作符
-  MyVector &operator=(const MyVector &other){
+  MyVector &operator=(const MyVector& other){
     if (this == &other) {
       return *this;
     }
@@ -37,13 +44,36 @@ class MyVector {
     std::copy(other.elements, other.elements + size, elements);
     return *this;
   }
+
+  //move赋值操作符
+  MyVector &operator=(MyVector&& other){
+    if (this == &other) {
+      return *this;
+    }
+    delete[] elements;
+    capacity = other.capacity;
+    size = other.size;
+    elements = other.elements;
+    other.elements = nullptr;
+    other.size = 0;
+    other.capacity = 0;
+    return *this;
+  }
   
   //push_back
-  void push_back(const T &value){
+  void push_back(const T& value){
     if(size==capacity){
       reserve(capacity==0?1:2*capacity);
     }
     elements[size++]=value;
+  }
+
+  //move push_back
+  void push_back(T&& value){
+    if(size==capacity){
+      reserve(capacity==0?1:2*capacity);
+    }
+    elements[size++]=std::move(value);
   }
 
   //获取数组中元素个数
