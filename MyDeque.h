@@ -20,7 +20,7 @@ class MyDeque{
 
   //析构函数
   ~MyDeque() {
-    clear();
+    //clear();
     delete[] elements;
   }
   
