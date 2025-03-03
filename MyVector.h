@@ -13,6 +13,9 @@ class MyVector {
  public:
   //构造函数
   MyVector() : elements(nullptr), size(0), capacity(0) {}
+  explicit MyVector(size_t newCapacity) : size(0), capacity(newCapacity) {
+    elements = new T[capacity];
+  }
 
   //析构函数
   ~MyVector() {
