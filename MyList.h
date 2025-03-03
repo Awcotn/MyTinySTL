@@ -220,7 +220,7 @@ class MyList{
   }
 
   //删除指定值的节点
-  void erase(const T& value){
+  void remove(const T& value){
     Node<T>* current =head;
     while ( current != nullptr && current->data != value ) {
       current = current->next;
